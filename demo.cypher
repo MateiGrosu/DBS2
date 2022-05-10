@@ -31,7 +31,23 @@ RETURN matei
 MATCH (n) RETURN n
 
 //All nodes with specific label 
-MATCH (person:Person) RETURN person
+MATCH (person:Person) 
+RETURN person 
+LIMIT 1
 
 //Properies
-MATCH (person:Person) RETURN person.name, person.height
+MATCH (person:Person) 
+RETURN person.name, person.height
+
+//Deleting
+//relationship
+MATCH (alex {name: "Alex Constantinescu"}) - [rel:WORKS_ON] -> (:GROUP)
+DELETE rel
+
+//node
+MATCH (matei {name: "Matei Grosu"})
+DELETE matei
+
+//node+rel
+MATCH (matei {name: "Matei Grosu"})
+DETACH DELETE matei
