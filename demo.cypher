@@ -31,7 +31,7 @@ RETURN matei
 MATCH (n) RETURN n
 
 //All nodes with specific label 
-MATCH (person:PERSON) RETURN person
+MATCH (person:Person) RETURN person
 
 //Properies
-MATCH (person:PERSON) RETURN person.name, person.height
+MATCH (person:Person) RETURN person.name, person.height
