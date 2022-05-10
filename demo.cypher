@@ -42,4 +42,4 @@ MATCH (n) RETURN n
 MATCH (person:PERSON) RETURN person
 
 //Properies
-MATCH (person:PERSON) RETURN person.name, player.height
+MATCH (person:PERSON) RETURN person.name, person.height
