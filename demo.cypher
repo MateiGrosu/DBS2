@@ -10,6 +10,7 @@ CREATE (project:GROUP {number: 17})
 CREATE (matei) - [:WORKS_ON] -> (project)
 CREATE (alex) - [:WORKS_ON] -> (project)
 
+
 //Updating
 
 MATCH (alex {name: "Alex"}) - [paper:WORKS_ON] -> (:GROUP)
@@ -41,6 +42,14 @@ LIMIT 1
 //Properies
 MATCH (person:Person) 
 RETURN person.name, person.height
+
+//unique constraints
+CREATE CONSTRAINT cons_name
+FOR (person:Person)
+REQUIRE person.name IS UNIQUE
+
+//drop the constraint
+DROP CONSTRAINT cons_name
 
 //Deleting
 //relationship
