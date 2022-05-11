@@ -15,13 +15,16 @@ CREATE (alex) - [:WORKS_ON] -> (project)
 MATCH (alex {name: "Alex"}) - [paper:WORKS_ON] -> (:GROUP)
 SET paper.work_hours = 100
 
+//
 MATCH (matei {name: "Matei"}) - [paper:WORKS_ON] -> (:GROUP)
 SET paper.work_hours = 100
 
+//
 MATCH (alex {name: "Alex"})
 SET alex.name = "Alex Constantinescu", alex.age = 21, alex.height = 180
 RETURN alex
 
+//
 MATCH (matei {name: "Matei"})
 SET matei.name = "Matei Grosu", matei.age = 20, matei.height = 180
 RETURN matei
